@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Your Order</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 600px;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #475569;
+      margin-bottom: 2rem;
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    input[type="text"] {
+      padding: 0.75rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.5rem;
+      width: 300px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.75rem 1.2rem;
+      background-color: #0f172a;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background-color: #1e293b;
+    }
+
+    .example {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    .example span {
+      font-weight: 600;
+      color: #1e293b;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form action="backend/track_order.php" method="post">
+  <h1>Track Your Order</h1>
+  <p>Enter your tracking ID to see real-time delivery status and estimated arrival time</p>
+  <div class="input-group">
+    <input 
+      type="text" 
+      name="tracking_id" 
+      id="tracking_id" 
+      placeholder="Enter tracking ID" 
+      required 
+    />
+    <button type="submit">🔍 Track</button>
+  </div>
+</form>
+
+  </div>
+
+  
+  <!-- <script>
+    function trackOrder() {
+      const id = document.getElementById("tracking_id").value.trim();
+
+      if (id) {
+        // ✅ Redirect to the backend PHP with the tracking ID
+        window.location.href = "backend/track-result.php?tracking_id=" + encodeURIComponent(id);
+      } else {
+        alert("Please enter a valid tracking ID.");
+      }
+    }
+  </script> -->
+
+</body>
+
+</html>
